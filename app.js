@@ -76,6 +76,9 @@ const diceTwo = document.getElementById("diceTwo");
 const roll = document.getElementById("roll");
 
 roll.addEventListener('click', ()=>{
-    diceOne.innerHTML = Math.floor(Math.random()*7)
-    diceTwo.innerHTML = Math.floor(Math.random()*7)
+
+    diceOne.innerHTML = Math.ceil(Math.random()*6)
+    diceTwo.innerHTML = Math.ceil(Math.random()*6)
+
+
 })
