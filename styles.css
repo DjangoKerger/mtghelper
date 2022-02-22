@@ -47,14 +47,14 @@
   justify-content: center;
 }
 
-/* .playerOneWrapper {
-  float: left;
+.playerOneWrapper {
+  /* float: left; */
   border: 2px solid yellow;
 }
 .playerTwoWrapper {
-  float: right;
+  /* float: right; */
   border: 2px solid yellow;
-} */
+}
 
 #addHealth {
   width: 50px;
@@ -76,4 +76,10 @@
 button {
   height: 50px;
   width: 50px;
+}
+
+/* Dice container */
+
+.diceContainer {
+  font-size: 3rem;
 }

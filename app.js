@@ -69,3 +69,13 @@ resetP2.addEventListener('click', ()=>{
     healthP2 = 20
     healthHolderP2.innerHTML = healthP2
 })
+
+//Dice Container
+const diceOne = document.getElementById("diceOne");
+const diceTwo = document.getElementById("diceTwo");
+const roll = document.getElementById("roll");
+
+roll.addEventListener('click', ()=>{
+    diceOne.innerHTML = Math.floor(Math.random()*7)
+    diceTwo.innerHTML = Math.floor(Math.random()*7)
+})
