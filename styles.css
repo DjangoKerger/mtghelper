@@ -44,16 +44,15 @@
 .healthContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.playerOneWrapper {
-  /* float: left; */
-  border: 2px solid yellow;
-}
+.playerOneWrapper,
 .playerTwoWrapper {
-  /* float: right; */
-  border: 2px solid yellow;
+  border: 10px solid blue;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
 }
 
 #addHealth {
@@ -81,5 +80,19 @@ button {
 /* Dice container */
 
 .diceContainer {
+  display: flex;
   font-size: 3rem;
+  border: 10px solid blue;
+  padding: 40px 5px 40px 5px;
+}
+
+.diceOne {
+  margin: 15px;
+}
+.diceTwo {
+  margin: 15px;
+}
+
+#roll {
+  margin: 15px;
 }

@@ -1,4 +1,5 @@
 
+
 /** CLOCK LOGIC */
 const currentTime = () => {
     let fullDate = new Date();
@@ -43,7 +44,7 @@ setInterval(currentTime, 1000)
     });
 
     resetP1.addEventListener('click', ()=> {
-        startingHealth = 20
+        healthP1 = 20
         healthHolderP1.innerHTML = healthP1
     })
 
@@ -79,6 +80,16 @@ roll.addEventListener('click', ()=>{
 
     diceOne.innerHTML = Math.ceil(Math.random()*6)
     diceTwo.innerHTML = Math.ceil(Math.random()*6)
+})
 
+//API 
 
+const app = express();
+
+app.get('/', function(req, res){
+    res.send("server is up and running")
+})
+
+app.listen(3000, function(){
+    console.log("server is running on 3000")
 })
