@@ -82,35 +82,29 @@ roll.addEventListener('click', ()=>{
     diceTwo.innerHTML = Math.ceil(Math.random()*6)
 })
 
-//API 
-
-// const app = express();
-
-// app.get('/', function(req, res){
-//     res.send("server is up and running")
-// })
-
-// app.listen(3000, function(){
-//     console.log("server is running on 3000")
-// })
+/***********************************************API*****************************************/ 
 
 
 const APIURL = "https://api.magicthegathering.io/v1/"
 
+//selects the main part of the document. used on line 115 to loop all the cards into the main section. 
 const main = document.querySelector('main');
 
+//async await. calls the API to get the card objects. resData is the response. 
 async function getCards(){
     const resp = await fetch(APIURL+"cards");
     const resData = await resp.json();
 
-
+    //now resData gets looped through and the relevant data gets grabbed
     resData.cards.forEach(card =>{
 
+        //destructed object so we dont have to use .card on everything we pull out.
         const {imageUrl, name, colorIdentity} = card;
-
+        //create a new div for everycard
         const cardElement = document.createElement("div");
+        //name the new div the cardContainer class
         cardElement.classList.add('cardContainer');
-
+        //then add the img h3 span etc into the html of the card container div.
         cardElement.innerHTML = `
             <img 
                 src="${imageUrl}" 
@@ -120,7 +114,7 @@ async function getCards(){
                 <h3>${name}</h3>
                 <span>${colorIdentity}</span>
             </div>`;
-        
+        // once every loop is done and all of the relevant html is build with info the card gets added to main
         main.appendChild(cardElement)
     })
 
