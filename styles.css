@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-/* body {
-  background: url(pattern.png);
-} */
+body {
+  background-color: #373b69;
+}
 
-.main {
+.topClock {
   background: #ccc;
   width: 400px;
   height: 175px;
@@ -95,4 +95,42 @@ button {
 
 #roll {
   margin: 15px;
+}
+
+/* CARDS */
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  border-radius: 22px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  width: 220px;
+  background-color: rgb(2, 31, 85);
+  margin: 2rem;
+}
+
+.cardContainer img {
+  max-width: 100%;
+  border-radius: 25px;
+}
+
+.cardInfo {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+  align-items: center;
+}
+
+.cardInfo h3 {
+  margin: 0;
+}
+
+.cardInfo span {
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
 }
