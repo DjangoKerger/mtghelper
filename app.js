@@ -84,12 +84,49 @@ roll.addEventListener('click', ()=>{
 
 //API 
 
-const app = express();
+// const app = express();
 
-app.get('/', function(req, res){
-    res.send("server is up and running")
-})
+// app.get('/', function(req, res){
+//     res.send("server is up and running")
+// })
 
-app.listen(3000, function(){
-    console.log("server is running on 3000")
-})
+// app.listen(3000, function(){
+//     console.log("server is running on 3000")
+// })
+
+
+const APIURL = "https://api.magicthegathering.io/v1/"
+
+const main = document.querySelector('main');
+
+async function getCards(){
+    const resp = await fetch(APIURL+"cards");
+    const resData = await resp.json();
+
+
+    resData.cards.forEach(card =>{
+
+        const {imageUrl, name, colorIdentity} = card;
+
+        const cardElement = document.createElement("div");
+        cardElement.classList.add('cardContainer');
+
+        cardElement.innerHTML = `
+            <img 
+                src="${imageUrl}" 
+                alt="${name}"
+            />
+            <div class="cardInfo">
+                <h3>${name}</h3>
+                <span>${colorIdentity}</span>
+            </div>`;
+        
+        main.appendChild(cardElement)
+    })
+
+    
+    console.log(resData)
+    
+}
+
+getCards();
